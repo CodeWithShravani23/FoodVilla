@@ -29,6 +29,6 @@
 ### Clone the repository
 
 ```bash
-git clone https://github.com/your-username/gourmet-galaxy.git
-cd gourmet-galaxy
+git clone https://github.com/CodeWithShravani23/FoodVilla
+cd FoodVilla
 
