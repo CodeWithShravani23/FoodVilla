@@ -26,6 +26,7 @@ const Body = () => {
     try {
       const res = await fetch("https://www.themealdb.com/api/json/v1/1/categories.php");
       const json = await res.json();
+     
       setAllRestaurants(json?.categories);
       setFilteredRestaurants(json?.categories);
     } catch (err) {
@@ -63,7 +64,7 @@ const Body = () => {
         </button>
       </div>
 
-      <div className="flex flex-wrap gap-8 justify-center px-4">
+      <div className="flex flex-wrap gap-8 justify-center px-4" data-testid="restro">
         {allRestaurants.length === 0 ? (
           <Shimmer />
         ) : filteredRestaurants.length > 0 ? (

@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/components/Header.jsx</title>
+    <title>Code coverage report for src/components/RestroCard.jsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/components</a> Header.jsx</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/components</a> RestroCard.jsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">20% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4/4</span>
+                <span class='fraction'>1/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">20% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>1/5</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -107,33 +107,17 @@
 <a name='L42'></a><a href='#L42'>42</a>
 <a name='L43'></a><a href='#L43'>43</a>
 <a name='L44'></a><a href='#L44'>44</a>
-<a name='L45'></a><a href='#L45'>45</a>
-<a name='L46'></a><a href='#L46'>46</a>
-<a name='L47'></a><a href='#L47'>47</a>
-<a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a>
-<a name='L50'></a><a href='#L50'>50</a>
-<a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a>
-<a name='L54'></a><a href='#L54'>54</a>
-<a name='L55'></a><a href='#L55'>55</a>
-<a name='L56'></a><a href='#L56'>56</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L45'></a><a href='#L45'>45</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -167,66 +151,49 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCertificate, faCartPlus } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import {Logo} from "./constant.js"
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useDispatch } from "react-redux";
+import { addItem } from "../cartSlice";
 &nbsp;
-const Header = () =&gt; {
-  const cartItem = useSelector((store) =&gt; store.cart.items);
+const RestroCard = <span class="fstat-no" title="function not covered" >({</span> idCategory, strCategory, strCategoryThumb, strCategoryDescription }) =&gt; {
+  const dispatch = <span class="cstat-no" title="statement not covered" >useDispatch();</span>
 &nbsp;
-  return (
-    &lt;div className="flex justify-between items-center bg-gradient-to-r from-orange-100 to-yellow-100 px-10 py-5 shadow-md sticky top-0 z-50"&gt;
-      {/* Logo and Brand */}
-      &lt;div className="flex items-center gap-4"&gt;
-         &lt;img
-    src="https://img.icons8.com/ios-filled/100/restaurant.png"
-    alt="Logo"
-    className="w-12 h-12" data-testid="logo"
-  /&gt;
-       &lt;h2 className="text-4xl font-bold text-orange-600 tracking-tight" style={{ fontFamily: 'Lobster, cursive' }}&gt;
-  Food&lt;span className="text-red-500"&gt;Villa&lt;/span&gt;
-&lt;/h2&gt;
+  const handleAddToCart = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    dispatch(addItem({ id: idCategory, name: strCategory }));</span>
+  };
 &nbsp;
-      &lt;/div&gt;
+<span class="cstat-no" title="statement not covered" >  return (</span>
+    &lt;div className="max-w-xs w-72 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden p-4 flex flex-col justify-between"&gt;
+      
+      &lt;img
+        src={strCategoryThumb}
+        alt={strCategory}
+        className="w-full h-44 object-cover rounded-lg mb-3"
+      /&gt;
 &nbsp;
-      {/* Navigation Links */}
-      &lt;div className="flex items-center gap-10 text-lg font-medium text-gray-700"&gt;
-        &lt;Link to="/" className="hover:text-orange-600 transition duration-200"&gt;Home&lt;/Link&gt;
+      &lt;div className="text-gray-800"&gt;
+        &lt;h3 className="text-xl font-semibold mb-1"&gt;{strCategory}&lt;/h3&gt;
+        &lt;p className="text-sm text-gray-600 mb-3"&gt;
+          {strCategoryDescription.split(" ").slice(0, 10).join(" ") + "..."}
+        &lt;/p&gt;
 &nbsp;
-        &lt;Link to="/offer" className="hover:text-orange-600 transition duration-200"&gt;
-          Offer &lt;FontAwesomeIcon icon={faCertificate} /&gt;
-        &lt;/Link&gt;
+        &lt;div className="flex justify-between items-center mt-auto"&gt;
+          &lt;span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm font-medium"&gt;
+            ⭐ 4.5
+          &lt;/span&gt;
 &nbsp;
-        &lt;Link to="/cart" className="relative hover:text-orange-600 transition duration-200" data-testid="cart"&gt;
-          &lt;FontAwesomeIcon icon={faCartPlus} /&gt;
-          {cartItem.length &gt; 0 &amp;&amp; (
-<span class="branch-1 cbranch-no" title="branch not covered" >            &lt;span className="absolute -top-2 -right-3 bg-red-600 text-white text-xs px-1.5 py-0.5 rounded-full"&gt;</span>
-              {cartItem.length}
-            &lt;/span&gt;
-          )}
-        &lt;/Link&gt;
-&nbsp;
-        &lt;Link to="/instamart" className="hover:text-orange-600 transition duration-200"&gt;Instamart&lt;/Link&gt;
-&nbsp;
-        &lt;Link to="/login"&gt;
-          &lt;button className="bg-gradient-to-r from-orange-500 to-red-400 text-white px-5 py-2 rounded-xl font-semibold shadow-md hover:scale-105 hover:shadow-lg transition-transform duration-200"&gt;
-            Login
+          &lt;button
+            onClick={handleAddToCart}
+            className="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-full text-sm"
+          &gt;
+            Add to Cart
           &lt;/button&gt;
-        &lt;/Link&gt;
+        &lt;/div&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   );
 };
 &nbsp;
-export default Header;
+export default RestroCard;
 &nbsp;
 &nbsp;</pre></td></tr></table></pre>
 
