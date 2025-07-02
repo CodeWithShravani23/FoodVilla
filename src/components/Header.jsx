@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCertificate, faCartPlus } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import {Logo} from "./constant.js"
 
 const Header = () => {
   const cartItem = useSelector((store) => store.cart.items);
@@ -12,8 +13,8 @@ const Header = () => {
       <div className="flex items-center gap-4">
          <img
     src="https://img.icons8.com/ios-filled/100/restaurant.png"
-    alt="logo"
-    className="w-12 h-12"
+    alt="Logo"
+    className="w-12 h-12" data-testid="logo"
   />
        <h2 className="text-4xl font-bold text-orange-600 tracking-tight" style={{ fontFamily: 'Lobster, cursive' }}>
   Food<span className="text-red-500">Villa</span>
