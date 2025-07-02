@@ -54,7 +54,7 @@ const Body = () => {
           onChange={(e) => setSearchText(e.target.value)}
         />
         <button
-          className="ml-3 px-4 py-2 bg-orange-500 text-white rounded-full hover:bg-orange-600 transition"
+          className="ml-3 px-4 py-2 bg-orange-500 text-white rounded-full hover:bg-orange-600 transition" data-testid="search-btn"
           onClick={() => {
             const data = filterData(searchText, allRestaurants);
             setFilteredRestaurants(data);
