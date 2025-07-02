@@ -30,7 +30,7 @@ const Header = () => {
           Offer <FontAwesomeIcon icon={faCertificate} />
         </Link>
 
-        <Link to="/cart" className="relative hover:text-orange-600 transition duration-200">
+        <Link to="/cart" className="relative hover:text-orange-600 transition duration-200" data-testid="cart">
           <FontAwesomeIcon icon={faCartPlus} />
           {cartItem.length > 0 && (
             <span className="absolute -top-2 -right-3 bg-red-600 text-white text-xs px-1.5 py-0.5 rounded-full">
