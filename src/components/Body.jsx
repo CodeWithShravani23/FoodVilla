@@ -9,7 +9,7 @@ import useOnline from "../utils/useOnline";
 
 function filterData(searchText, restaurants) {
   return restaurants.filter((restaurant) =>
-    restaurant.strCategory.toLowerCase().includes(searchText.toLowerCase())
+    restaurant.strCategoryDescription.toLowerCase().includes(searchText.toLowerCase())
   );
 }
 
@@ -51,7 +51,7 @@ const Body = () => {
           placeholder="Search for categories..."
           className="w-96 px-5 py-2 border border-gray-300 rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-orange-400"
           value={searchText}
-          onChange={(e) => setSearchText(e.target.value)}
+          onChange={(e) => setSearchText(e.target.value)} data-testid="searchbox"
         />
         <button
           className="ml-3 px-4 py-2 bg-orange-500 text-white rounded-full hover:bg-orange-600 transition" data-testid="search-btn"

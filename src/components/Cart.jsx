@@ -31,9 +31,9 @@ const Cart = () => {
           </div>
 
           <div className="flex flex-wrap gap-10 justify-center mt-8">
-            {cartItems.map((item) => (
-              <FoodItem key={item.idCategory} {...item} />
-            ))}
+          {cartItems.map((item, index) => (
+  <FoodItem key={index} {...item} />
+))}
           </div>
         </>
       )}
