@@ -33,7 +33,7 @@ const RestraurantMenu = () => {
           </p>
           <button
             className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full text-sm transition"
-            onClick={handleAddItem}
+            onClick={handleAddItem} data-testid="addbtn"
           >
             ➕ Add to Cart
           </button>

@@ -6,21 +6,25 @@
 
 ## 🚀 Features
 
-- Clean and modular React components
-- Responsive UI with modern styling
-- Dynamic restaurant listings
-- Optional filtering and sorting interface
-- Ready to integrate with any RESTful API
-- Ideal for beginners to intermediate React learners
+- Clean and modular React components  
+- Responsive UI with modern styling  
+- Dynamic restaurant listings  
+- Optional filtering and sorting interface  
+- Cart functionality using **Redux store**  
+- Unit testing implemented with **Jest**  
+- Ready to integrate with any RESTful API  
+- Ideal for beginners to intermediate React learners  
 
 ---
 
 ## 🛠️ Technologies Used
 
-- React.js
-- Axios (for API calls)
-- CSS / Tailwind / Bootstrap (choose your style)
-- Mock API / JSON-based data (can integrate with scalable restaurant API)
+- React.js  
+- Redux (for state management)  
+- Axios (for API calls)  
+- CSS / Tailwind / Bootstrap (choose your style)  
+- Jest (for testing the app)  
+- Mock API / JSON-based data (can integrate with scalable restaurant API)  
 
 ---
 
@@ -31,4 +35,5 @@
 ```bash
 git clone https://github.com/CodeWithShravani23/FoodVilla
 cd FoodVilla
+
 

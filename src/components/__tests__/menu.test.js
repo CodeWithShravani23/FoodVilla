@@ -6,6 +6,7 @@ import{StaticRouter} from "react-router-dom/server";
 import Header from "../Header.jsx"
 import RestraurantMenu from "../RestraurantMenu.jsx"
 import RESTO_DATA from "../../mocks/data.js"
+import Cart from "../Cart.jsx"
 
 
 global.fetch = jest.fn(() =>
@@ -17,21 +18,19 @@ global.fetch = jest.fn(() =>
 test("seachboc test",async()=>{
 const body=render(<StaticRouter>
     <Provider store={store}>
-        <Body />
+        <Header/>
+        <RestraurantMenu/>
+        <Cart/>
     </Provider>
 </StaticRouter>)
 
 await waitFor(()=>{
-expect(body.getByTestId("search-btn")) 
+expect(body.getByTestId("addbtn")) 
 })
 
-const searchbox =body.getByTestId("searchbox");
-fireEvent.change(searchbox,{target:{
-  value:"sweet",
-}});
-const btn=body.getByTestId("search-btn");
-fireEvent.click(btn);
+const addbtn=body.getByTestId("addbtn");
+fireEvent.click(addbtn);
 
-const restro =body.getByTestId("restro");
-expect(restro.children.length) .toBe(1);
+const cart=body.getByTestId("cart");
+expect(cart.querySelector("span").textContent).toBe("1");
 });

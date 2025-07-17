@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/components/RestroCard.jsx</title>
+    <title>Code coverage report for src/components/RestraurantMenu.jsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,20 +19,20 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/components</a> RestroCard.jsx</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/components</a> RestraurantMenu.jsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80% </span>
+                <span class="strong">85.71% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4/5</span>
+                <span class='fraction'>6/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4/5</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
@@ -107,17 +107,24 @@
 <a name='L42'></a><a href='#L42'>42</a>
 <a name='L43'></a><a href='#L43'>43</a>
 <a name='L44'></a><a href='#L44'>44</a>
-<a name='L45'></a><a href='#L45'>45</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">43x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">43x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">43x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -151,49 +158,54 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useDispatch } from "react-redux";
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useParams } from "react-router-dom";
+import Shimmer from "./Shimmer";
+import { useDispatch } from "react-redux";
 import { addItem } from "../cartSlice";
+import useRestro from "../utils/useRestro";
 &nbsp;
-const RestroCard = ({ idCategory, strCategory, strCategoryThumb, strCategoryDescription }) =&gt; {
+const RestraurantMenu = () =&gt; {
+  const { id } = useParams();
+  const restaurant = useRestro(id);  // Clean variable name
   const dispatch = useDispatch();
 &nbsp;
-  const handleAddToCart = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
-<span class="cstat-no" title="statement not covered" >    dispatch(addItem({ id: idCategory, name: strCategory }));</span>
-  };
+  const handleAddItem = <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >dispatch(addItem(restaurant));</span>
 &nbsp;
-  return (
-    &lt;div className="max-w-xs w-72 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden p-4 flex flex-col justify-between"&gt;
-      
-      &lt;img
-        src={strCategoryThumb}
-        alt={strCategory}
-        className="w-full h-44 object-cover rounded-lg mb-3"
-      /&gt;
-&nbsp;
-      &lt;div className="text-gray-800"&gt;
-        &lt;h3 className="text-xl font-semibold mb-1"&gt;{strCategory}&lt;/h3&gt;
-        &lt;p className="text-sm text-gray-600 mb-3"&gt;
-          {strCategoryDescription.split(" ").slice(0, 10).join(" ") + "..."}
+  return !restaurant ? (
+    &lt;Shimmer /&gt;
+  ) : (
+<span class="branch-1 cbranch-no" title="branch not covered" >    &lt;div className="flex justify-center px-4"&gt;</span>
+      &lt;div className="max-w-md w-full bg-white rounded-lg shadow-md border hover:shadow-xl transition-shadow duration-300 overflow-hidden p-5 mt-20"&gt;
+        &lt;h1 className="text-2xl font-bold mb-2 text-center text-green-700"&gt;
+          {restaurant.strCategory}
+        &lt;/h1&gt;
+        &lt;img
+          src={restaurant.strCategoryThumb}
+          alt={restaurant.strCategory}
+          className="w-full h-64 object-cover rounded-md mb-4"
+        /&gt;
+        &lt;p className="text-gray-700 text-sm mb-4"&gt;
+          {restaurant.strCategoryDescription}
         &lt;/p&gt;
-&nbsp;
-        &lt;div className="flex justify-between items-center mt-auto"&gt;
-          &lt;span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm font-medium"&gt;
-            ⭐ 4.5
-          &lt;/span&gt;
-&nbsp;
+        &lt;div className="flex justify-between items-center mb-4"&gt;
+          &lt;p className="text-yellow-600 font-medium"&gt;
+            4.5 &lt;i className="fa-solid fa-star"&gt;&lt;/i&gt;
+          &lt;/p&gt;
           &lt;button
-            onClick={handleAddToCart}
-            className="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-full text-sm"
+            className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full text-sm transition"
+            onClick={handleAddItem} data-testid="addbtn"
           &gt;
-            Add to Cart
+            ➕ Add to Cart
           &lt;/button&gt;
         &lt;/div&gt;
+        &lt;p className="text-sm text-gray-400 text-center"&gt;ID: {id}&lt;/p&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   );
 };
 &nbsp;
-export default RestroCard;
+export default RestraurantMenu;
 &nbsp;
 &nbsp;</pre></td></tr></table></pre>
 

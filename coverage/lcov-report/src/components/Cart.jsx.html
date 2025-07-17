@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/components/RestroCard.jsx</title>
+    <title>Code coverage report for src/components/Cart.jsx</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/components</a> RestroCard.jsx</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/components</a> Cart.jsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>4/5</span>
+                <span class='fraction'>6/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">50% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>1/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>2/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80% </span>
+                <span class="strong">71.42% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>4/5</span>
+                <span class='fraction'>5/7</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -110,14 +110,16 @@
 <a name='L45'></a><a href='#L45'>45</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">43x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">43x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">43x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -139,6 +141,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -148,53 +151,50 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useDispatch } from "react-redux";
-import { addItem } from "../cartSlice";
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useDispatch, useSelector } from 'react-redux';
+import { clearCart } from '../cartSlice';
+import FoodItem from './foodItem';
 &nbsp;
-const RestroCard = ({ idCategory, strCategory, strCategoryThumb, strCategoryDescription }) =&gt; {
+const Cart = () =&gt; {
+  const cartItems = useSelector((store) =&gt; store.cart.items);
   const dispatch = useDispatch();
 &nbsp;
-  const handleAddToCart = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
-<span class="cstat-no" title="statement not covered" >    dispatch(addItem({ id: idCategory, name: strCategory }));</span>
+  const handleClearCart = <span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >    dispatch(clearCart());</span>
   };
 &nbsp;
   return (
-    &lt;div className="max-w-xs w-72 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden p-4 flex flex-col justify-between"&gt;
-      
-      &lt;img
-        src={strCategoryThumb}
-        alt={strCategory}
-        className="w-full h-44 object-cover rounded-lg mb-3"
-      /&gt;
+    &lt;div className="p-6"&gt;
+      &lt;h1 className="text-3xl font-semibold mb-4 text-center"&gt;🛒 Your Cart&lt;/h1&gt;
 &nbsp;
-      &lt;div className="text-gray-800"&gt;
-        &lt;h3 className="text-xl font-semibold mb-1"&gt;{strCategory}&lt;/h3&gt;
-        &lt;p className="text-sm text-gray-600 mb-3"&gt;
-          {strCategoryDescription.split(" ").slice(0, 10).join(" ") + "..."}
-        &lt;/p&gt;
-&nbsp;
-        &lt;div className="flex justify-between items-center mt-auto"&gt;
-          &lt;span className="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm font-medium"&gt;
-            ⭐ 4.5
-          &lt;/span&gt;
-&nbsp;
-          &lt;button
-            onClick={handleAddToCart}
-            className="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded-full text-sm"
-          &gt;
-            Add to Cart
-          &lt;/button&gt;
+      {cartItems.length === 0 ? (
+        &lt;div className="text-center mt-10 text-gray-500"&gt;
+          &lt;h2 className="text-xl mb-2"&gt;Your cart is empty 😔&lt;/h2&gt;
+          &lt;p&gt;Add some tasty items to enjoy your meal!&lt;/p&gt;
         &lt;/div&gt;
-      &lt;/div&gt;
+      ) : (
+<span class="branch-1 cbranch-no" title="branch not covered" >        &lt;&gt;</span>
+          &lt;div className="flex justify-center"&gt;
+            &lt;button
+              onClick={handleClearCart}
+              className="bg-red-100 text-red-600 px-4 py-2 rounded-full hover:bg-red-200 transition"
+            &gt;
+              🧹 Clear Cart
+            &lt;/button&gt;
+          &lt;/div&gt;
+&nbsp;
+          &lt;div className="flex flex-wrap gap-10 justify-center mt-8"&gt;
+          {cartItems.map(<span class="fstat-no" title="function not covered" >(i</span>tem, index) =&gt; (
+<span class="cstat-no" title="statement not covered" >  &lt;FoodItem key={index} {...item} /&gt;</span>
+))}
+          &lt;/div&gt;
+        &lt;/&gt;
+      )}
     &lt;/div&gt;
   );
 };
 &nbsp;
-export default RestroCard;
-&nbsp;
+export default Cart;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
