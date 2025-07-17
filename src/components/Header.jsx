@@ -12,8 +12,8 @@ const Header = () => {
       {/* Logo and Brand */}
       <div className="flex items-center gap-4">
          <img
-    src="https://img.icons8.com/ios-filled/100/restaurant.png"
-    alt="Logo"
+    src={Logo}
+    alt="logo"
     className="w-12 h-12" data-testid="logo"
   />
        <h2 className="text-4xl font-bold text-orange-600 tracking-tight" style={{ fontFamily: 'Lobster, cursive' }}>
